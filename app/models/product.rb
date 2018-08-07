@@ -1,4 +1,5 @@
 class Product < ActiveRecord::Base
+  extend Enumerize
   belongs_to :category, optional: true
   validates :title, :desciption, presence: true
   validate :title_is_shorter_than_description
@@ -8,6 +9,8 @@ class Product < ActiveRecord::Base
 
   scope :published, -> { where(published: true)}
   scope :priced_more_than, ->(price){ where('price > ?', price)}
+
+  enumerize :level, in: {easy: 1, medium: 2, hard: 3}
 
   def set_title_lowercase
     self.title = title.downcase
