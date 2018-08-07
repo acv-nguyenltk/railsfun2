@@ -3,6 +3,9 @@ class Product < ActiveRecord::Base
   validate :title_is_shorter_than_description
   validates :price, numericality: { greater_than: 0 }, presence: true
 
+  scope :published, -> { where(published: true)}
+  scope :priced_more_than, ->(price){ where('price > ?', price)}
+
   def title_is_shorter_than_description
     return if title.blank? or desciption.blank?
     if desciption.length < title.length
