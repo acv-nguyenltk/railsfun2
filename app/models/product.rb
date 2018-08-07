@@ -1,11 +1,13 @@
 class Product < ActiveRecord::Base
+  belongs_to :category, optional: true
   validates :title, :desciption, presence: true
   validate :title_is_shorter_than_description
   validates :price, numericality: { greater_than: 0 }, presence: true
 
+  before_save :strip_html_from_description, :set_title_lowercase
+
   scope :published, -> { where(published: true)}
   scope :priced_more_than, ->(price){ where('price > ?', price)}
-  before_save :strip_html_from_description, :set_title_lowercase
 
   def set_title_lowercase
     self.title = title.downcase
