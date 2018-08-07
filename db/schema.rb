@@ -10,13 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_07_025218) do
+ActiveRecord::Schema.define(version: 2018_08_07_025937) do
 
   create_table "products", force: :cascade do |t|
     t.string "title"
     t.text "desciption"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "price", precision: 6, scale: 2
+    t.boolean "published"
+    t.string "short_desciption"
   end
 
 end
