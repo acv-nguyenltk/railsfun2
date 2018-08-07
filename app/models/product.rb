@@ -12,4 +12,10 @@ class Product < ActiveRecord::Base
       errors.add(:description, 'cant be shorter than title')
     end
   end
+
+  before_save :strip_html_from_description
+
+  def strip_html_from_description
+    self.desciption = ActionView::Base.full_sanitizer.sanitize(self.desciption)
+  end
 end
