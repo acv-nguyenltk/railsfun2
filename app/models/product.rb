@@ -13,6 +13,7 @@ class Product < ActiveRecord::Base
   enumerize :level, in: {easy: 1, medium: 2, hard: 3}
   enumerize :country, in: ISO3166::Country.translations.invert
 
+
   def set_title_lowercase
     self.title = title.downcase
   end

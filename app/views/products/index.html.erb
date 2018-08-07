@@ -1,0 +1,13 @@
+<table style="width:100%">
+  <tr>
+   <th>Title</th>
+   <th>Price</th>
+   <th>Category</th>
+ </tr>
+ <% @products.each do |product| %>
+ <tr>
+   </th><%= product.title %></th>
+   <th><%= product.price %></th>
+   <th><%= product.category.try(:title) %></th>
+ </tr>
+<% end %>
