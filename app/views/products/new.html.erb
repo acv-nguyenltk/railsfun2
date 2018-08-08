@@ -3,6 +3,7 @@
   <%= f.input :desciption %>
   <%= f.input :price, min: 0.01 %>
   <%= f.input :country %>
+  <%= f.input :published %>
   <%= f.input :level, as: :select, collection: Product.level.options %>
   <%= f.input :category %>
   <%= f.action :submit %>
