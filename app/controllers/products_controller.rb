@@ -38,6 +38,17 @@ class ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    @product = Product.find(params[:id])
+    if @product.destroy
+      flash[:notice] = "Deleted"
+      redirect_to products_url
+    else
+      flash[:notice] = "Not yet"
+      redirect_to products_url
+    end
+  end
+
   private def product_params
     params.require(:product).permit( :title,
     :desciption, :level, :category_id, :price, :country, :published)
