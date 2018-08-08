@@ -11,5 +11,6 @@
    <td><%= product.price %></td>
    <td><%= product.category.try(:title) %></td>
    <td><%= link_to 'Read info', product_path(product) %>
+   <td><%= link_to 'Edit', edit_product_path(product) %>
  </tr>
 <% end %>

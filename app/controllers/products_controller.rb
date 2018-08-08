@@ -12,8 +12,6 @@ class ProductsController < ApplicationController
   end
 
   def create
-    product_params = params.require(:product).permit( :title,
-      :desciption, :level, :category_id, :price, :country, :published)
       @product = Product.new(product_params)
     if @product.save
       flash[:notice] = "You have sucessfully created the product"
@@ -24,5 +22,24 @@ class ProductsController < ApplicationController
     end
 
   end
+  def edit
+    @product = Product.find(params[:id])
+    render :new
+  end
 
+  def update
+    @product = Product.find(params[:id])
+    if @product.update(product_params)
+      flash[:notice] = "You have sucessfully created the product"
+      redirect_to products_url
+    else
+      flash[:notice] = "There is an error of the product"
+      render :new
+    end
+  end
+
+  private def product_params
+    params.require(:product).permit( :title,
+    :desciption, :level, :category_id, :price, :country, :published)
+  end
 end
