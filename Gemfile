@@ -26,6 +26,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'enumerize'
 gem 'countries'
 gem 'awesome_print'
+gem 'formtastic', '~> 3.0'
+gem 'country_select'
+
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
