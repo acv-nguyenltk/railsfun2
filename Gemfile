@@ -62,6 +62,7 @@ group :development do
   gem 'pry-doc'
   gem 'pry-rails'
   gem 'pry-stack_explorer'
+  gem 'slim'
 end
 
 group :test do

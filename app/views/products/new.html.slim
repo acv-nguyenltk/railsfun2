@@ -1,0 +1,20 @@
+/ <!-- <%= semantic_form_for @product do |f| %>
+/   <%= f.input :title %>
+/   <%= f.input :desciption %>
+/   <%= f.input :price, min: 0.01 %>
+/   <%= f.input :country %>
+/   <%= f.input :published %>
+/   <%= f.input :level, as: :select, collection: Product.level.options, selected: @product.level %>
+/   <%= f.input :category %>
+/   <%= f.action :submit %>
+/ <% end %>
+= semantic_form_for @product do |f|
+  = f.input :title
+  = f.input :desciption
+  = f.input :price, min: 0.01
+  = f.input :country
+  = f.input :published
+  = f.input :level, as: :select, collection: Product.level.options, selected: @product.level
+  = f.input :category
+  = f.action :submit
+  end
