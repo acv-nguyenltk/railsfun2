@@ -24,5 +24,4 @@ table[style="widtd:100%"]
     td Category
     td Update
     td Delete
-  - @products.each do |product|
-    = render partial: 'product', locals: {product: product}
+  = render partial: 'product', collection: @products
