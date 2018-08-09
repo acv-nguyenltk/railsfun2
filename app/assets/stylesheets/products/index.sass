@@ -1,0 +1,19 @@
+$border: 1px solid grey
+$color: red
+$front_size: 20px
+@mixin border-radius($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  -ms-border-radius: $radius
+  border-radius: $radius
+
+#products_index
+  h1
+    border: $border
+    color: $color
+    front_size: $front_size
+    @include border-radius(10px)
+  .listing
+    .title
+      a
+        color: red

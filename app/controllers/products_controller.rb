@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :get_product, only: [:show, :edit, :update, :destroy]
   def index
+    @title = 'Title'
     @products = Product.published.includes(:category)
   end
 
@@ -13,8 +14,8 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    return redirect_to product_path, notice: 'Created' if @product.save
-      flash[:notice] = 'Not yet'
+    return redirect_to product_path(@product), notice: 'Created' if @product.save
+      flash.now[:notice] = 'Not yet'
       render :new
   end
   def edit
@@ -23,7 +24,7 @@ class ProductsController < ApplicationController
 
   def update
     return redirect_to product_path, notice: 'Updated' if @product.update(product_params)
-      flash[:notice] = 'Not yet'
+      flash.now[:notice] = 'Not yet'
       render :new
   end
 
