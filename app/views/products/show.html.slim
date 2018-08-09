@@ -26,15 +26,9 @@ table[style="widtd:100%"]
     td Level
     td Country
   tr
-    td
-      = @product.title
-    td
-      = @product.price
-    td
-      = @product.desciption
-    td
-      = @product.category.try(:title)
-    td
-      = @product.level
-    td
-      = @product.country
+    td = @product.title
+    td = @product.price
+    td = @product.desciption
+    td = @product.category.try(:title)
+    td = @product.level
+    td = @product.country

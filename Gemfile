@@ -28,6 +28,7 @@ gem 'countries'
 gem 'awesome_print'
 gem 'formtastic', '~> 3.0'
 gem 'country_select'
+gem 'slim'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
@@ -62,7 +63,6 @@ group :development do
   gem 'pry-doc'
   gem 'pry-rails'
   gem 'pry-stack_explorer'
-  gem 'slim'
 end
 
 group :test do
