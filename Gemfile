@@ -29,6 +29,8 @@ gem 'awesome_print'
 gem 'formtastic', '~> 3.0'
 gem 'country_select'
 gem 'slim'
+gem 'formtastic-bootstrap'
+
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

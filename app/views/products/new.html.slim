@@ -9,11 +9,12 @@
 /   <%= f.action :submit %>
 / <% end %>
 = semantic_form_for @product do |f|
-  = f.input :title
-  = f.input :desciption
-  = f.input :price, min: 0.01
-  = f.input :country
-  = f.input :published
-  = f.input :level, as: :select, collection: Product.level.options, selected: @product.level
-  = f.input :category
-  = f.action :submit
+  = f.input :title, :input_html => { :class => 'form-control' }
+  = f.input :desciption, :input_html => { :class => 'form-control' }
+  = f.input :price, min: 0.01, :input_html => { :class => 'form-control' }
+  = f.input :country, :input_html => { :class => 'form-control' }
+  = f.input :published, :input_html => { :class => 'form-control' }
+  = f.input :level, as: :select, collection: Product.level.options, selected: @product.level, :input_html => { :class => 'form-control' }
+  = f.input :category, :input_html => { :class => 'form-control' }
+  = f.action :submit, :input_html => { :class => 'form-control' }
+  
